@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+
+
+
+<script>
+function fullwin(){
+	window.open("helpdesk_builder.html","full","fullscreen,scrollbars")
+}
+</script>
+<input type="button" class="button" id="fullscreen" onClick="fullwin();window.close();" value="Fullscreen">
+<script>
+var button = document.getElementById("fullscreen");
+var winName = window.name;
+if (winName == "full") {
+	button.value = 'Close Window';
+} else {
+	button.value = 'Launch In New Window';
+}
+</script>
+<br><br>
+
+<div> <!-- Current data from Odoo, EXCEL FUNCTION ="<option SID=""" & A2 & """ TTID=""" & C2 & """ value=""" & B2 & """>" & B2 & "</option>" -->
+	<datalist id="scopeList">
+<option class="136" value="136:Communications Network Management">Communications Network Management</option>
+<option class="133" value="133:eCommerce">eCommerce</option>
+<option class="9" value="9:Individual">Individual</option>
+<option class="124" value="124:General Question">General Question</option>
+<option class="10" value="10:Localized">Localized</option>
+<option class="125" value="125:Marketing/Branding">Marketing/Branding</option>
+<option class="11" value="11:Building">Building</option>
+<option class="123" value="123:Website Feature Request">Website Feature Request</option>
+<option class="12" value="12:Site">Site</option>
+<option class="122" value="122:Website Issue">Website Issue</option>
+<option class="13" value="13:COLO">COLO</option>
+<option class="14" value="14:Office">Office</option>
+<option class="15" value="15:Lab">Lab</option>
+<option class="126" value="126:Network Issues">Network Issues</option>
+<option class="16" value="16:Informational">Informational</option>
+<option class="127" value="127:System Issues">System Issues</option>
+<option class="137" value="137:Data Services">Data Services</option>
+<option class="128" value="128:Firewall Issues">Firewall Issues</option>
+<option class="17" value="17:Doc Request">Doc Request</option>
+<option class="138" value="138:FTTX Support">FTTX Support</option>
+<option class="139" value="139:GIS Portal Feature Request">GIS Portal Feature Request</option>
+<option class="129" value="129:Infrastructure Issues">Infrastructure Issues</option>
+<option class="18" value="18:Doc Revision">Doc Revision</option>
+<option class="140" value="140:GIS Portal Issue">GIS Portal Issue</option>
+<option class="141" value="141:GIS Portal Member">GIS Portal Member</option>
+<option class="116" value="116:Circuit ID Request">Circuit ID Request</option>
+<option class="142" value="142:GIS Question">GIS Question</option>
+<option class="113" value="113:Geolocation Changes">Geolocation Changes</option>
+<option class="143" value="143:Mapping">Mapping</option>
+<option class="112" value="112:Routing Change Request">Routing Change Request</option>
+<option class="144" value="144:Permitting">Permitting</option>
+<option class="117" value="117:Turnup Resource">Turnup Resource</option>
+<option class="145" value="145:Reporting">Reporting</option>
+<option class="130" value="130:Other Requests">Other Requests</option>
+<option class="19" value="19:Doc Review">Doc Review</option>
+<option class="146" value="146:Marketing Project Assistance">Marketing Project Assistance</option>
+<option class="147" value="147:Request Copies of Marketing Materials">Request Copies of Marketing Materials</option>
+<option class="121" value="121:Other - Facility">Other - Facility</option>
+<option class="120" value="120:Maintenance Request">Maintenance Request</option>
+<option class="119" value="119:Maintenance Issue">Maintenance Issue</option>
+<option class="111" value="111:IP Allocation/Reclamation">IP Allocation/Reclamation</option>
+<option class="118" value="118:Other">Other</option>
+<option class="115" value="115:Business ONT Provisioning">Business ONT Provisioning</option>
+<option class="114" value="114:Public DNS Update">Public DNS Update</option>
+<option class="131" value="131:Training Request">Training Request</option>
+<option class="20" value="20:Other">Other</option>
+<option class="132" value="132:Training Review">Training Review</option>
+<option class="21" value="21:Training Revision">Training Revision</option>
+<option class="22" value="22:Doc Request - Ext. Dept">Doc Request - Ext. Dept</option>
+<option class="134" value="134:New">New</option>
+<option class="135" value="135:Modify">Modify</option>
+<option class="23" value="23:Sharepoint">Sharepoint</option>
+<option class="24" value="24:Knowledge Base">Knowledge Base</option>
+<option class="51" value="51:Alert">Alert</option>
+<option class="52" value="52:Workstation">Workstation</option>
+<option class="53" value="53:Server">Server</option>
+<option class="54" value="54:Network">Network</option>
+<option class="55" value="55:Cloud Service">Cloud Service</option>
+<option class="56" value="56:Application">Application</option>
+<option class="61" value="61:Individual (FTTx)">Individual (FTTx)</option>
+<option class="63" value="63:VPN">VPN</option>
+<option class="66" value="66:Marketing Question">Marketing Question</option>
+<option class="67" value="67:User Accounts">User Accounts</option>
+<option class="68" value="68:Reporting">Reporting</option>
+<option class="69" value="69:Odoo Issue">Odoo Issue</option>
+<option class="70" value="70:Odoo Feature Request">Odoo Feature Request</option>
+<option class="97" value="97:Pebbles Software Support">Pebbles Software Support</option>
+<option class="71" value="71:Other">Other</option>
+<option class="72" value="72:Circuit">Circuit</option>
+<option class="100" value="100:Cable Infrastructure">Cable Infrastructure</option>
+<option class="102" value="102:Office (B2B)">Office (B2B)</option>
+<option class="73" value="73:Metro">Metro</option>
+<option class="74" value="74:COLO">COLO</option>
+<option class="103" value="103:Application">Application</option>
+<option class="104" value="104:Workstation">Workstation</option>
+<option class="75" value="75:Informational">Informational</option>
+<option class="76" value="76:Odoo Question">Odoo Question</option>
+<option class="105" value="105:Server">Server</option>
+<option class="77" value="77:Monitoring Reports">Monitoring Reports</option>
+<option class="110" value="110:Phone">Phone</option>
+<option class="106" value="106:Email">Email</option>
+<option class="78" value="78:Node Management">Node Management</option>
+<option class="107" value="107:Application">Application</option>
+<option class="79" value="79:Testing">Testing</option>
+<option class="108" value="108:Network">Network</option>
+<option class="80" value="80:Service Issue">Service Issue</option>
+<option class="109" value="109:Administrative">Administrative</option>
+<option class="81" value="81:Network Change Request">Network Change Request</option>
+<option class="82" value="82:Intermittent Network">Intermittent Network</option>
+<option class="83" value="83:Network Infrastructure Problem">Network Infrastructure Problem</option>
+<option class="84" value="84:Service Request">Service Request</option>
+<option class="85" value="85:Service Restoration">Service Restoration</option>
+<option class="86" value="86:Password Reset">Password Reset</option>
+<option class="87" value="87:User Onboarding Request">User Onboarding Request</option>
+<option class="88" value="88:User Offboarding Request">User Offboarding Request</option>
+<option class="89" value="89:Phone">Phone</option>
+<option class="90" value="90:Key Fob\ID Badge">Key Fob\ID Badge</option>
+<option class="91" value="91:Laptop\Computer">Laptop\Computer</option>
+<option class="92" value="92:Printer\Copier">Printer\Copier</option>
+<option class="93" value="93:Virus\Malware">Virus\Malware</option>
+<option class="94" value="94:Email">Email</option>
+<option class="95" value="95:Other">Other</option>
+<option class="96" value="96:FTTx Software Support">FTTx Software Support</option>
+	</datalist>
+
+	<datalist id="ticketTypeList">
+<option class="T131" value="947:NOC Training Request">NOC Training Request</option>
+<option class="T72" value="919:Site Problem">Site Problem</option>
+<option class="T73" value=":"></option>
+<option class="T74" value=":"></option>
+<option class="T146" value="987:Order New Domain Names">Order New Domain Names</option>
+<option class="T146" value="986:Create Business Cards, Nameplates and Office Materials">Create Business Cards, Nameplates and Office Materials</option>
+<option class="T146" value="985:Create New Marketing Materials">Create New Marketing Materials</option>
+<option class="T146" value="984:Modify Existing Marketing Materials">Modify Existing Marketing Materials</option>
+<option class="T146" value="983:Request Marketing's Assistance with a Project">Request Marketing's Assistance with a Project</option>
+<option class="T145" value="982:Report Fix GIS">Report Fix GIS</option>
+<option class="T145" value="981:Report Change GIS">Report Change GIS</option>
+<option class="T145" value="979:New Report GIS">New Report GIS</option>
+<option class="T144" value="975:Permit Deliverable Fix">Permit Deliverable Fix</option>
+<option class="T144" value="974:Permit Deliverable Change">Permit Deliverable Change</option>
+<option class="T144" value="973:New Permit Deliverable">New Permit Deliverable</option>
+<option class="T143" value="972:Map Deliverable Fix">Map Deliverable Fix</option>
+<option class="T143" value="971:Map Deliverable Change">Map Deliverable Change</option>
+<option class="T143" value="970:New Map Deliverable">New Map Deliverable</option>
+<option class="T142" value="969:GIS Process Question">GIS Process Question</option>
+<option class="T142" value="968:GIS General Question">GIS General Question</option>
+<option class="T141" value="967:GIS Portal Member Removal Request">GIS Portal Member Removal Request</option>
+<option class="T141" value="966:GIS Portal New Member Request">GIS Portal New Member Request</option>
+<option class="T140" value="965:GIS Portal General Issue">GIS Portal General Issue</option>
+<option class="T140" value="964:GIS Portal Error Message">GIS Portal Error Message</option>
+<option class="T139" value="963:GIS Portal Feature Request">GIS Portal Feature Request</option>
+<option class="T138" value="962:Address Verification">Address Verification</option>
+<option class="T138" value="961:Address Question">Address Question</option>
+<option class="T138" value="960:Address Override">Address Override</option>
+<option class="T137" value="959:Data Publishing Request">Data Publishing Request</option>
+<option class="T137" value="958:Data Export">Data Export</option>
+<option class="T136" value="957:Communications Network Design Change">Communications Network Design Change</option>
+<option class="T136" value="956:Communications Network Initial Design">Communications Network Initial Design</option>
+<option class="T135" value="955:Modify Existing Product Category">Modify Existing Product Category</option>
+<option class="T135" value="954:Modify Existing Product">Modify Existing Product</option>
+<option class="T134" value="953:New Product Category">New Product Category</option>
+<option class="T134" value="952:New Product">New Product</option>
+<option class="T24" value="951:Training">Training</option>
+<option class="T133" value="950:eCommerce">eCommerce</option>
+<option class="T132" value="949:Training Review Request">Training Review Request</option>
+<option class="T131" value="948:Other Training Request">Other Training Request</option>
+<option class="T125" value="925:Update Marketing">Update Marketing</option>
+<option class="T128" value="939:Firewall Policies">Firewall Policies</option>
+<option class="T119" value="880:Investigate">Investigate</option>
+<option class="T115" value="866:Submit ONT for Business Provisioning">Submit ONT for Business Provisioning</option>
+<option class="T114" value="865:Update Public DNS for Subnet">Update Public DNS for Subnet</option>
+<option class="T113" value="864:Update Geolocatoin">Update Geolocatoin</option>
+<option class="T112" value="863:Temporary Routing Change">Temporary Routing Change</option>
+<option class="T112" value="862:Permanent Routing Change">Permanent Routing Change</option>
+<option class="T112" value="861:Bandwidth Provider Change">Bandwidth Provider Change</option>
+<option class="T111" value="860:Temporary IP Allocation">Temporary IP Allocation</option>
+<option class="T111" value="859:IP Reclamation">IP Reclamation</option>
+<option class="T111" value="858:New Site IP Allocation">New Site IP Allocation</option>
+<option class="T130" value="944:Request Knowledge">Request Knowledge</option>
+<option class="T97" value="818:Feature Request">Feature Request</option>
+<option class="T100" value="827:New Cabling">New Cabling</option>
+<option class="T100" value="826:Test Cabling">Test Cabling</option>
+<option class="T100" value="825:Move Cabling">Move Cabling</option>
+<option class="T103" value="830:Service Degradation">Service Degradation</option>
+<option class="T102" value="838:Request (B2B)">Request (B2B)</option>
+<option class="T102" value="837:Question (B2B)">Question (B2B)</option>
+<option class="T102" value="835:Office Issue (B2B)">Office Issue (B2B)</option>
+<option class="T102" value="834:Maintenance B2B">Maintenance B2B</option>
+<option class="T102" value="831:Deployment">Deployment</option>
+<option class="T102" value="833:Investigation (B2B)">Investigation (B2B)</option>
+<option class="T97" value="824:Registration Issue">Registration Issue</option>
+<option class="T97" value="823:Subscriber Issue">Subscriber Issue</option>
+<option class="T97" value="822:My Properties Issue">My Properties Issue</option>
+<option class="T97" value="821:Houston Issue">Houston Issue</option>
+<option class="T97" value="820:General Issue (R&D)">General Issue (R&D)</option>
+<option class="T147" value="988:Request Existing Swag and Giveaway Items">Request Existing Swag and Giveaway Items</option>
+<option class="T129" value="943:Room Issues-Specify MR2/MR3">Room Issues-Specify MR2/MR3</option>
+<option class="T129" value="942:Diagram Updates">Diagram Updates</option>
+<option class="T129" value="941:Rack Issues-Specify MR2/MR3">Rack Issues-Specify MR2/MR3</option>
+<option class="T129" value="940:Zone Request-Specify MR2/MR3">Zone Request-Specify MR2/MR3</option>
+<option class="T128" value="938:VDOM Network">VDOM Network</option>
+<option class="T128" value="937:Initial Buildout">Initial Buildout</option>
+<option class="T127" value="936:VM Network Issue">VM Network Issue</option>
+<option class="T127" value="933:Initial System">Initial System</option>
+<option class="T127" value="934:VM Creation Request">VM Creation Request</option>
+<option class="T127" value="935:VM Issues">VM Issues</option>
+<option class="T126" value="932:Network Issue">Network Issue</option>
+<option class="T126" value="931:Initial Networking">Initial Networking</option>
+<option class="TFALSE" value="930:Network Issues">Network Issues</option>
+<option class="T122" value="922:Broken Navigation">Broken Navigation</option>
+<option class="T123" value="927:Site Navigation Change">Site Navigation Change</option>
+<option class="T124" value="929:General Website Question">General Website Question</option>
+<option class="T125" value="926:New Marketing Request">New Marketing Request</option>
+<option class="T96" value="813:Market Activation Request">Market Activation Request</option>
+<option class="T104" value="839:General Question">General Question</option>
+<option class="T105" value=":"></option>
+<option class="T106" value=":"></option>
+<option class="T107" value=":"></option>
+<option class="T104" value="842:Add Device">Add Device</option>
+<option class="T105" value="843:No Access to Files/Applications">No Access to Files/Applications</option>
+<option class="T110" value="844:General Question Regarding Usage/Voicemail">General Question Regarding Usage/Voicemail</option>
+<option class="T104" value="841:Non-Operational">Non-Operational</option>
+<option class="T105" value=":"></option>
+<option class="T110" value=":"></option>
+<option class="T110" value="845:Add Device/Feature">Add Device/Feature</option>
+<option class="T106" value="846:Spam Blocker">Spam Blocker</option>
+<option class="T106" value="847:On Boarding">On Boarding</option>
+<option class="T106" value="848:Off Boarding">Off Boarding</option>
+<option class="T107" value="849:Won't Launch">Won't Launch</option>
+<option class="T107" value="850:Request for New Application">Request for New Application</option>
+<option class="T108" value="851:Internet Down">Internet Down</option>
+<option class="T108" value="852:Entire Site Down">Entire Site Down</option>
+<option class="T108" value="853:Requesting Information on Pavlov Media Internet">Requesting Information on Pavlov Media Internet</option>
+<option class="T109" value="854:Setup or Delete Network Accounts">Setup or Delete Network Accounts</option>
+<option class="T109" value="855:Unlock Active Directory">Unlock Active Directory</option>
+<option class="T109" value="856:Reset Password">Reset Password</option>
+<option class="T109" value="857:Licensing Question">Licensing Question</option>
+<option class="T116" value="867:Circuit ID Request">Circuit ID Request</option>
+<option class="T118" value="871:Other - Backbone">Other - Backbone</option>
+<option class="T117" value="872:Turnup Resource">Turnup Resource</option>
+<option class="T119" value="873:Repair">Repair</option>
+<option class="T119" value="874:Clean/Insects/Rodents">Clean/Insects/Rodents</option>
+<option class="T120" value="875:Equipment Request/Move">Equipment Request/Move</option>
+<option class="T119" value="876:Weather Related">Weather Related</option>
+<option class="T121" value="877:Other - Facility Maintenance">Other - Facility Maintenance</option>
+<option class="T120" value="878:Installation">Installation</option>
+<option class="T120" value="879:Build/Construct">Build/Construct</option>
+<option class="T123" value="928:User Interface Change">User Interface Change</option>
+<option class="T96" value="814:Billing Issue">Billing Issue</option>
+<option class="T122" value="921:General Web Site Issue">General Web Site Issue</option>
+<option class="T122" value="924:Incorrect Product Data">Incorrect Product Data</option>
+<option class="T96" value="815:Relocation Request">Relocation Request</option>
+<option class="T122" value="923:Missing Text/Images">Missing Text/Images</option>
+<option class="T96" value="816:Email Change Request">Email Change Request</option>
+<option class="T96" value="817:General Issue">General Issue</option>
+<option class="T82" value="760:Wired">Wired</option>
+<option class="T82" value="764:Other (INIT)">Other (INIT)</option>
+<option class="T83" value=":"></option>
+<option class="T82" value="762:Server">Server</option>
+<option class="T80" value="750:Polling Service">Polling Service</option>
+<option class="T83" value="769:Switch Stack">Switch Stack</option>
+<option class="T79" value="745:Test New Service">Test New Service</option>
+<option class="T92" value="791:Printing">Printing</option>
+<option class="T82" value="761:Wireless">Wireless</option>
+<option class="T81" value="759:General Assistance">General Assistance</option>
+<option class="T80" value="751:General Service Request">General Service Request</option>
+<option class="T88" value="809:Effective After Specific Date">Effective After Specific Date</option>
+<option class="T67" value="728:User On-boarding Request">User On-boarding Request</option>
+<option class="T66" value="724:Marketing General Question">Marketing General Question</option>
+<option class="T83" value="768:Access Point (INIT)">Access Point (INIT)</option>
+<option class="T67" value="729:User Off-boarding Request">User Off-boarding Request</option>
+<option class="T81" value="756:Server Commission">Server Commission</option>
+<option class="T93" value="800:Virus\Malware">Virus\Malware</option>
+<option class="T67" value="726:User Permission Change">User Permission Change</option>
+<option class="T84" value="771:Diagram Request">Diagram Request</option>
+<option class="TFALSE" value="723:Hardware Request">Hardware Request</option>
+<option class="T77" value="748:Change Monitoring Report">Change Monitoring Report</option>
+<option class="T61" value="711:Individual Issue (FTTx)">Individual Issue (FTTx)</option>
+<option class="T81" value="757:Server Decommission">Server Decommission</option>
+<option class="T67" value="725:User Template Change">User Template Change</option>
+<option class="T81" value="755:VLAN Trunk">VLAN Trunk</option>
+<option class="TFALSE" value="710:New Software">New Software</option>
+<option class="TFALSE" value="709:New Server">New Server</option>
+<option class="T79" value="744:Test New Device">Test New Device</option>
+<option class="T95" value="807:Other (MIS)">Other (MIS)</option>
+<option class="T130" value="708:Password Reset">Password Reset</option>
+<option class="TFALSE" value="707:Off-Boarding Request">Off-Boarding Request</option>
+<option class="T83" value="765:Camera">Camera</option>
+<option class="TFALSE" value="706:Onboarding Request">Onboarding Request</option>
+<option class="T77" value="747:New Monitoring Report">New Monitoring Report</option>
+<option class="T83" value="766:Access Control Systems">Access Control Systems</option>
+<option class="T78" value="754:Generate Site Topology">Generate Site Topology</option>
+<option class="TFALSE" value="717:Misc. Firewall Support Request">Misc. Firewall Support Request</option>
+<option class="TFALSE" value="38:Question">Question</option>
+<option class="T94" value="805:Add\Remove User(s) on Dist">Add\Remove User(s) on Dist</option>
+<option class="T70" value="734:Odoo Feature Request">Odoo Feature Request</option>
+<option class="T61" value="712:Request (Add/Change/Cancel) (FTTx)">Request (Add/Change/Cancel) (FTTx)</option>
+<option class="T61" value="713:Billing/Payment Inquiry (FTTx)">Billing/Payment Inquiry (FTTx)</option>
+<option class="T81" value="758:NPS Change Request">NPS Change Request</option>
+<option class="TFALSE" value="39:Issue">Issue</option>
+<option class="T63" value="803:Cannot Connect">Cannot Connect</option>
+<option class="T61" value="714:Investigation (FTTx)">Investigation (FTTx)</option>
+<option class="T78" value="752:Node(s) Unmanage">Node(s) Unmanage</option>
+<option class="T89" value="778:Desk Phone">Desk Phone</option>
+<option class="T11" value="19:Building(s) Issue">Building(s) Issue</option>
+<option class="T61" value="715:Question (Informational) (FTTx)">Question (Informational) (FTTx)</option>
+<option class="T80" value="749:Web Service">Web Service</option>
+<option class="T91" value="786:Hardware Request (Computer)">Hardware Request (Computer)</option>
+<option class="T10" value="20:AP Outage">AP Outage</option>
+<option class="T61" value="716:Deployment (Installation/Takeover) (FTTx)">Deployment (Installation/Takeover) (FTTx)</option>
+<option class="T85" value="772:VPN Support">VPN Support</option>
+<option class="T12" value="21:Site Issue">Site Issue</option>
+<option class="T13" value=":"></option>
+<option class="T78" value="742:Node(s) Removal">Node(s) Removal</option>
+<option class="T13" value="22:COLO Issue">COLO Issue</option>
+<option class="T78" value="753:Onboard Site">Onboard Site</option>
+<option class="T14" value="23:Office Issue">Office Issue</option>
+<option class="T90" value="782:New">New</option>
+<option class="T86" value="774:Network">Network</option>
+<option class="T15" value="24:Lab Issue">Lab Issue</option>
+<option class="T78" value="743:Node(s) Addition">Node(s) Addition</option>
+<option class="T9" value="25:Request (Add/Change/Cancel)">Request (Add/Change/Cancel)</option>
+<option class="T12" value=":"></option>
+<option class="T13" value=":"></option>
+<option class="T14" value=":"></option>
+<option class="T72" value=":"></option>
+<option class="T73" value=":"></option>
+<option class="T74" value=":"></option>
+<option class="T84" value="770:Change Request">Change Request</option>
+<option class="T9" value="26:Billing/Payment Inquiry">Billing/Payment Inquiry</option>
+<option class="T12" value=":"></option>
+<option class="T13" value=":"></option>
+<option class="T72" value=":"></option>
+<option class="T73" value=":"></option>
+<option class="T74" value=":"></option>
+<option class="T11" value="27:Acute Event">Acute Event</option>
+<option class="T12" value=":"></option>
+<option class="T13" value=":"></option>
+<option class="T72" value=":"></option>
+<option class="T73" value=":"></option>
+<option class="T74" value=":"></option>
+<option class="T78" value="741:Node(s) Change">Node(s) Change</option>
+<option class="T85" value="773:Firewall Support">Firewall Support</option>
+<option class="T12" value="28:End of Service (EOS)">End of Service (EOS)</option>
+<option class="T13" value=":"></option>
+<option class="T72" value=":"></option>
+<option class="T73" value=":"></option>
+<option class="T74" value=":"></option>
+<option class="T10" value="29:Maintenance">Maintenance</option>
+<option class="T11" value=":"></option>
+<option class="T12" value=":"></option>
+<option class="T13" value=":"></option>
+<option class="T14" value=":"></option>
+<option class="T72" value=":"></option>
+<option class="T73" value=":"></option>
+<option class="T74" value=":"></option>
+<option class="T93" value="801:Email Question">Email Question</option>
+<option class="T76" value="739:Odoo Process Question">Odoo Process Question</option>
+<option class="T9" value="30:Investigation">Investigation</option>
+<option class="T10" value=":"></option>
+<option class="T11" value=":"></option>
+<option class="T12" value=":"></option>
+<option class="T13" value=":"></option>
+<option class="T14" value=":"></option>
+<option class="T15" value=":"></option>
+<option class="T16" value=":"></option>
+<option class="T72" value=":"></option>
+<option class="T73" value=":"></option>
+<option class="T74" value=":"></option>
+<option class="T75" value=":"></option>
+<option class="T17" value="73:NOC Doc Requests">NOC Doc Requests</option>
+<option class="T18" value=":"></option>
+<option class="T19" value=":"></option>
+<option class="T20" value=":"></option>
+<option class="T90" value="783:Replacement">Replacement</option>
+<option class="T91" value="787:Software Request (Computer)">Software Request (Computer)</option>
+<option class="T10" value="77:Maintenance - Unscheduled">Maintenance - Unscheduled</option>
+<option class="T11" value=":"></option>
+<option class="T12" value=":"></option>
+<option class="T13" value=":"></option>
+<option class="T14" value=":"></option>
+<option class="T72" value=":"></option>
+<option class="T73" value=":"></option>
+<option class="T74" value=":"></option>
+<option class="T17" value="74:NOC Projects">NOC Projects</option>
+<option class="T18" value=":"></option>
+<option class="T19" value=":"></option>
+<option class="T20" value=":"></option>
+<option class="T88" value="810:Immediate">Immediate</option>
+<option class="T9" value="31:Question (Informational)">Question (Informational)</option>
+<option class="T10" value=":"></option>
+<option class="T11" value=":"></option>
+<option class="T12" value=":"></option>
+<option class="T13" value=":"></option>
+<option class="T14" value=":"></option>
+<option class="T15" value=":"></option>
+<option class="T16" value=":"></option>
+<option class="T75" value=":"></option>
+<option class="T86" value="777:Other (Password)">Other (Password)</option>
+<option class="T17" value="75:Other Doc Requests">Other Doc Requests</option>
+<option class="T18" value=":"></option>
+<option class="T19" value=":"></option>
+<option class="T20" value=":"></option>
+<option class="T94" value="806:Other (Email)">Other (Email)</option>
+<option class="T89" value="779:Headset">Headset</option>
+<option class="T9" value="32:Deployment (Installation/Takeover)">Deployment (Installation/Takeover)</option>
+<option class="T10" value=":"></option>
+<option class="T11" value=":"></option>
+<option class="T12" value=":"></option>
+<option class="T13" value=":"></option>
+<option class="T14" value=":"></option>
+<option class="T15" value=":"></option>
+<option class="T72" value=":"></option>
+<option class="T73" value=":"></option>
+<option class="T74" value=":"></option>
+<option class="T92" value="792:Copying">Copying</option>
+<option class="T17" value="76:Other Projects">Other Projects</option>
+<option class="T18" value=":"></option>
+<option class="T19" value=":"></option>
+<option class="T20" value=":"></option>
+<option class="T63" value="804:Other (VPN)">Other (VPN)</option>
+<option class="T51" value="78:Agent/Probe">Agent/Probe</option>
+<option class="T51" value="79:Antivirus">Antivirus</option>
+<option class="T56" value=":"></option>
+<option class="T92" value="793:Scanning">Scanning</option>
+<option class="T51" value="80:Backup">Backup</option>
+<option class="T55" value=":"></option>
+<option class="T56" value=":"></option>
+<option class="T88" value="811:Other (Offboarding)">Other (Offboarding)</option>
+<option class="T76" value="735:Odoo General Question">Odoo General Question</option>
+<option class="T51" value="652:Clock Drift">Clock Drift</option>
+<option class="T51" value="653:Connectivity">Connectivity</option>
+<option class="T89" value="780:Company Issued Cell">Company Issued Cell</option>
+<option class="T51" value="654:Critical Windows Service">Critical Windows Service</option>
+<option class="T93" value="802:Other (Malware)">Other (Malware)</option>
+<option class="T90" value="812:Other (Key Fob)">Other (Key Fob)</option>
+<option class="T51" value="657:Failover Cluster">Failover Cluster</option>
+<option class="T91" value="788:Hardware Issue (Computer)">Hardware Issue (Computer)</option>
+<option class="T51" value="658:Firewall Activity">Firewall Activity</option>
+<option class="T51" value="659:Firewall Utilization">Firewall Utilization</option>
+<option class="T69" value="733:Odoo Error Message">Odoo Error Message</option>
+<option class="T91" value="789:Software Issue (Computer)">Software Issue (Computer)</option>
+<option class="T51" value="660:Hyper-V">Hyper-V</option>
+<option class="T87" value="808:User Onboarding Request">User Onboarding Request</option>
+<option class="T51" value="662:Patch Status">Patch Status</option>
+<option class="T51" value="663:Server Hardware">Server Hardware</option>
+<option class="T89" value="781:Other (Phone)">Other (Phone)</option>
+<option class="T51" value="665:Windows Service">Windows Service</option>
+<option class="T92" value="794:Fax">Fax</option>
+<option class="T56" value="81:Adobe">Adobe</option>
+<option class="T91" value="790:Other (Computer)">Other (Computer)</option>
+<option class="T69" value="740:Odoo General Issue">Odoo General Issue</option>
+<option class="T56" value="666:Chrome">Chrome</option>
+<option class="T92" value="795:Toner Request">Toner Request</option>
+<option class="T56" value="667:Edge">Edge</option>
+<option class="T92" value="796:Maintenance Kit">Maintenance Kit</option>
+<option class="T56" value="668:Excel">Excel</option>
+<option class="T56" value="678:Safari">Safari</option>
+<option class="T56" value="669:Firefox">Firefox</option>
+<option class="T56" value="679:Visio">Visio</option>
+<option class="T68" value="732:New Report">New Report</option>
+<option class="T56" value="680:Word">Word</option>
+<option class="T56" value="670:Internet Explorer">Internet Explorer</option>
+<option class="T104" value="797:Error Message">Error Message</option>
+<option class="T110" value=":"></option>
+<option class="T107" value=":"></option>
+<option class="T108" value=":"></option>
+<option class="T92" value=":"></option>
+<option class="T55" value="82:Storage">Storage</option>
+<option class="TFALSE" value="718:I need a firewall rule changed">I need a firewall rule changed</option>
+<option class="T56" value="671:iTunes">iTunes</option>
+<option class="T68" value="730:Report Fix">Report Fix</option>
+<option class="T56" value="672:Java">Java</option>
+<option class="T55" value="681:Drop Box">Drop Box</option>
+<option class="T92" value="798:Jamming">Jamming</option>
+<option class="T56" value="673:OneNote">OneNote</option>
+<option class="T55" value="682:Exchange">Exchange</option>
+<option class="T68" value="731:Report Change">Report Change</option>
+<option class="T56" value="675:Outlook">Outlook</option>
+<option class="T55" value="683:Legacy Email">Legacy Email</option>
+<option class="T92" value="799:Other (Printer)">Other (Printer)</option>
+<option class="T55" value="684:OneDrive">OneDrive</option>
+<option class="T56" value="676:Power Point">Power Point</option>
+<option class="T9" value="18:Individual Issue">Individual Issue</option>
+<option class="T56" value="677:QuickBooks">QuickBooks</option>
+<option class="T55" value="685:SharePoint">SharePoint</option>
+<option class="TFALSE" value="722:I need to create a Virtual Machine">I need to create a Virtual Machine</option>
+<option class="T55" value="686:Skype for Business">Skype for Business</option>
+<option class="T68" value="736:Report Question">Report Question</option>
+<option class="T55" value="687:Teams">Teams</option>
+<option class="T67" value="727:User Password Reset">User Password Reset</option>
+<option class="T55" value="688:VoIP">VoIP</option>
+<option class="TFALSE" value="721:I need a Backup a Virtual Machine">I need a Backup a Virtual Machine</option>
+<option class="T55" value="689:Website">Website</option>
+<option class="T54" value="83:Access Point">Access Point</option>
+<option class="TFALSE" value="720:I need a DNS record change">I need a DNS record change</option>
+<option class="T54" value="690:Cabling">Cabling</option>
+<option class="T54" value="691:Internet Service Provider">Internet Service Provider</option>
+<option class="T54" value="692:NAS">NAS</option>
+<option class="T54" value="693:Phone">Phone</option>
+<option class="T54" value="694:Power">Power</option>
+<option class="T54" value="695:Printer">Printer</option>
+<option class="T54" value="696:Router/Firewall">Router/Firewall</option>
+<option class="T54" value="697:Switch">Switch</option>
+<option class="T54" value="698:UPS">UPS</option>
+<option class="T54" value="699:VPN">VPN</option>
+<option class="T53" value="84:Active Directory">Active Directory</option>
+<option class="T53" value="655:DHCP">DHCP</option>
+<option class="T53" value="656:DNS">DNS</option>
+<option class="T53" value="700:File Server">File Server</option>
+<option class="T53" value="701:Great Plains">Great Plains</option>
+<option class="T53" value="661:IIS">IIS</option>
+<option class="T53" value="664:SQL">SQL</option>
+<option class="T53" value="703:VMWare">VMWare</option>
+<option class="T52" value="85:Hardware">Hardware</option>
+<option class="T53" value=":"></option>
+<option class="T52" value="702:Linux">Linux</option>
+<option class="T52" value="704:Mac">Mac</option>
+<option class="T130" value="674:Other">Other</option>
+<option class="T52" value=":"></option>
+<option class="T53" value=":"></option>
+<option class="T54" value=":"></option>
+<option class="T55" value=":"></option>
+<option class="T56" value=":"></option>
+<option class="T71" value=":"></option>
+<option class="T52" value="705:Windows">Windows</option>
+	</datalist>
+
+	<datalist id="ticketTypeCurrentScopeList"></datalist>
+</div>
+
+<html>
+	<head>
+    <title>Helpdesk Module Builder</title>
+    <script>
+function addRow() {
+	var scope = document.getElementById("scope");
+	var ticketType = document.getElementById("ticketType");
+	var quest = document.getElementById("quest");
+	var table = document.getElementById("tableData");
+	if (scope.value != "SELECT" && ticketType.value != "SELECT") {
+		var rowCount = table.rows.length;
+		var row = table.insertRow(rowCount);
+		row.insertCell(0).innerHTML = '<input type="button" class="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
+		row.insertCell(1).innerHTML = scope.value;
+		row.insertCell(2).innerHTML = ticketType.value;
+		if (quest.value.length > 1) {
+			row.insertCell(3).innerHTML = quest.value;
+		} else {
+			row.insertCell(3).innerHTML = "Info";
+		}
+		quest.value = '';
+	}
+}
+
+function addHelpdesk() {
+	var helpdesk = document.getElementById("helpdesk").value;
+	var tableHeader = document.getElementById("tableHeader");
+	var helpdeskName = 
+	`\n	${helpdesk}`;	
+	tableHeader.innerHTML = helpdeskName;
+}
+ 
+function deleteRow(obj) {
+	var index = obj.parentNode.parentNode.rowIndex;
+	var table = document.getElementById("tableData");
+	table.deleteRow(index);
+}
+
+function ticketTypeClear() {
+	var ticketTypeSelector = document.getElementById("ticketType");
+	while (ticketTypeSelector.length > 0) {
+		ticketTypeSelector.remove(ticketTypeSelector.options[0]);
+	}
+}
+
+function ticketTypeGen() {
+	var scopeSelector = document.getElementById("scope");
+	var ticketTypeSelector = document.getElementById("ticketType");
+	var scope = Number(scopeSelector.options[scopeSelector.selectedIndex].className);
+	var ticketTypeList = document.getElementsByClassName(`T${scope}`);
+	ticketTypeClear();
+	if (ticketTypeList.length > 0) {
+		var opt = document.createElement("option");
+		opt.text = "SELECT";
+		opt.value = "SELECT";
+		ticketTypeSelector.add(opt);
+		for (i = 0 ; i < ticketTypeList.length ; i++) {
+			var opt = document.createElement("option");
+			if (ticketTypeList[i].value.length > 1) {
+				opt.text = ticketTypeList[i].innerHTML;
+				opt.value = ticketTypeList[i].value;
+				ticketTypeSelector.add(opt);
+			} else {
+				opt.text = `BLANK OPTION "${ticketTypeList[i].value}"`;
+				opt.value = '';
+				ticketTypeSelector.add(opt);
+			}
+		}
+	}
+}
+
+function load() {
+  console.log("Page load finished");
+}
+
+</script>
+		<script>
+function fileGen() {
+	var createdCode = document.getElementById("helpdeskCode");
+	var helpdesk = (document.getElementById("tableHeader").innerHTML).split(':');
+	var helpdeskName = helpdesk[helpdesk.length - 1];
+	var helpdeskID = helpdesk[0];
+	console.log(helpdeskID);
+	if (helpdesk_name == null || helpdeskName.length < 1) {
+		helpdeskName = 'new_helpdesk';
+	}
+	helpdeskName = `${helpdeskName.replace(/ /g,"_")}`;
+	helpdeskName = helpdeskName.toLowerCase();
+	var helpdeskCode_odoo = codePt1 + createdCode.innerHTML + codePt2;
+	var helpdeskCode_demo = codePt1 + createdCode.innerHTML + codePt3
+	console.log("Function Call: fileGen");
+	var table = document.getElementById("newFileData");
+	while (table.rows.length > 1) {
+		table.deleteRow(table.rows.length - 1);
+	}
+	var helpdeskData_odoo = '';
+	var helpdeskData_demo = '';
+	var helpdeskDataInp_odoo = [new Blob([helpdeskCode_odoo], {type: 'text/plain'})];
+	var helpdeskDataInp_demo = [new Blob([helpdeskCode_demo], {type: 'text/plain'})];
+	// Construct a file
+	var helpdesk_odoo = new File(
+		helpdeskDataInp_odoo, 
+		`${helpdeskName}_odoo.html`, 
+		{type: "overide/mimetype"}
+	);
+	var helpdesk_demo = new File(
+		helpdeskDataInp_demo, 
+		`${helpdeskName}_demo.html`, 
+		{type: "overide/mimetype"}
+	);
+	var fileReader = new FileReader();
+	fileReader.onload = function(evt) {
+		helpdeskData_odoo = "<br><a href=" 
+		+ URL.createObjectURL(helpdesk_odoo) 
+		+ " download=" 
+		+ helpdesk_odoo.name 
+		+ "> " 
+		+ helpdesk_odoo.name 
+		+ "</a>" 
+		+ "<br>" 
+		+ helpdesk_odoo.lastModifiedDate;
+	}
+	fileReader.readAsText(helpdesk_odoo);
+
+	var fileReader = new FileReader();
+	fileReader.onload = function(evt) {
+		helpdeskData_demo = "<br><a href=" 
+		+ URL.createObjectURL(helpdesk_demo) 
+		+ " download=" 
+		+ helpdesk_demo.name 
+		+ "> " 
+		+ helpdesk_demo.name 
+		+ "</a>" 
+		+ "<br>" 
+		+ helpdesk_demo.lastModifiedDate;
+
+		var rowCount = table.rows.length;
+		var row = table.insertRow(rowCount);
+		row.insertCell(0).innerHTML = helpdeskData_odoo;
+		var rowCount = table.rows.length;
+		var row = table.insertRow(rowCount);
+		row.insertCell(0).innerHTML = helpdeskData_demo;
+	}
+	fileReader.readAsText(helpdesk_demo);
+}
+
+</script>
+		<script>
+function helpdeskGen() {
+	var helpdesk = (document.getElementById("helpdesk").value).split(':');
+	helpdesk = helpdesk[helpdesk.length - 1];
+	var scopeArray = [];
+	var ticketTypeArray = [];
+	var questArray = [];
+	
+	var table = document.getElementById("tableData");
+	var rows = table.rows;
+	for (i = 1 ; i < rows.length ; i++) {
+		entries = rows[i].cells;
+		for (j = 1 ; j < entries.length ; j++) {
+			entry = entries[j].innerHTML;
+			if (j == 1) {
+				scopeArray.push(entry);
+			} else if (j == 2) {
+				ticketTypeArray.push(entry);
+			} else if (j == 3) {
+				questArray.push(entry);
+			} else {
+			}
+		}
+	}
+	// console.log(helpdesk);
+	// console.log(scopeArray);
+	// console.log(ticketTypeArray);
+	// console.log(questArray);
+	codeGen(helpdesk, scopeArray, ticketTypeArray, questArray);
+}
+
+function codeGen(helpdesk, scopeArray, ticketTypeArray, questArray) {
+	var helpdeskCode = document.getElementById("helpdeskCode");
+	// helpdeskCode.innerHTML = `${helpdesk}, ${scopeArray}, ${ticketTypeArray}, ${questArray}`;
+	
+	var IDMapDict = {};
+	var scopeMapDict = {};
+	var ticketTypeMapDict = {};
+	var questMapDict = {};
+	
+	var scopeIDList = [];
+	var scopeNameList = [];
+	var ticketTypeIDList = [];
+	var ticketTypeNameList = [];
+	
+	for (i = 0 ; i < scopeArray.length ; i++) {
+		scopeSplit = scopeArray[i].split(':');
+		ticketTypeSplit = ticketTypeArray[i].split(':');
+		scopeIDList.push(scopeSplit[0]);
+		scopeNameList.push(scopeSplit[1]);
+		ticketTypeIDList.push(ticketTypeSplit[0]);
+		ticketTypeNameList.push(ticketTypeSplit[1]);
+		
+	}
+	for (i = 0 ; i < scopeIDList.length ; i++) {
+		if (scopeIDList[i] in IDMapDict) {
+			if (!(IDMapDict[scopeIDList[i]]).includes(ticketTypeIDList[i])) {
+				IDMapDict[scopeIDList[i]].push(ticketTypeIDList[i]);
+			}
+		} else {
+			IDMapDict[scopeIDList[i]] = [ticketTypeIDList[i]];
+		}
+	}
+	for (i = 0 ; i < scopeIDList.length ; i++) {
+		if (scopeIDList[i] in scopeMapDict) {
+			if (!(scopeMapDict[scopeIDList[i]]).includes(scopeNameList[i])) {
+				scopeMapDict[scopeIDList[i]].push(scopeNameList[i]);
+			}
+		} else {
+			scopeMapDict[scopeIDList[i]] = [scopeNameList[i]];
+		}
+	}
+	for (i = 0 ; i < scopeIDList.length ; i++) {
+		if (scopeIDList[i] in ticketTypeMapDict) {
+			if (!(ticketTypeMapDict[scopeIDList[i]]).includes(`'${ticketTypeNameList[i]}'`)) {
+				ticketTypeMapDict[scopeIDList[i]].push(`'${ticketTypeNameList[i]}'`);
+			}
+		} else {
+			ticketTypeMapDict[scopeIDList[i]] = [`'${ticketTypeNameList[i]}'`];
+		}
+	}
+	for (i = 0 ; i < ticketTypeIDList.length ; i++) {
+		if (ticketTypeIDList[i] in questMapDict) {
+			if (!(questMapDict[ticketTypeIDList[i]]).includes(`'${questArray[i]}'`)) {
+				questMapDict[ticketTypeIDList[i]].push(`'${questArray[i]}'`);
+			}
+		} else {
+			questMapDict[ticketTypeIDList[i]] = [`'${questArray[i]}'`];
+		}
+	}
+
+	var scopeIDListList = [];
+	for (i = 0 ; i < scopeIDList.length ; i++) {
+		if (!(scopeIDListList.includes(scopeIDList[i]))) {
+			scopeIDListList.push(scopeIDList[i]);
+		}
+	}
+	var scopeNameListList = [];
+	for (i = 0 ; i < scopeNameList.length ; i++) {
+		if (!(scopeNameListList.includes(`'${scopeNameList[i]}'`))) {
+			scopeNameListList.push(`'${scopeNameList[i]}'`);
+		}
+	}
+
+	var IDMapText = '';
+	for (var key in IDMapDict) {
+		IDMapText = IDMapText + `IDMap.set(${key},[${IDMapDict[key]}]);\n	`;
+	}
+	var scopeMapText = '';
+	for (var key in scopeMapDict) {
+		scopeMapText = scopeMapText + `scopeMap.set(${key},'${scopeMapDict[key]}');\n	`;
+	}
+	var ticketTypeMapText = '';
+	for (var key in ticketTypeMapDict) {
+		ticketTypeMapText = ticketTypeMapText + `ticketTypeMap.set(${key},[${ticketTypeMapDict[key]}]);\n	`;
+	}
+	var questMapText = '';
+	for (var key in questMapDict) {
+		questMapText = questMapText + `questMap.set(${key},[${questMapDict[key]}]);\n	`;
+	}
+	
+	var code = 
+	`\n	scopeIDList = [${scopeIDListList}];
+	\n	scopeNameList = [${scopeNameListList}];
+	\n	var IDMap = new Map();
+	\n	var scopeMap = new Map();
+	\n	var ticketTypeMap = new Map();
+	\n	var questMap = new Map();
+	\n	${IDMapText}${scopeMapText}${ticketTypeMapText}${questMapText}`;
+	helpdeskCode.innerHTML = code;
+	
+}
+
+</script>
+		<script src="helpdesk_static_code.js"></script>
+	</head>
+	<body onload="load()" style="margin:20px; padding:10px" >
+		<div id="myform">
+			<b>Helpdesk Data:</b>
+			<table class="table table-bordered table-dark table-hover">
+				<tr>
+					<td>Helpdesk:</td>
+					<td>
+						<!-- <input type="text" id="helpdesk" oninput="Javascript:addHelpdesk()"> -->
+						<select id="helpdesk" class="button button1" oninput="Javascript:addHelpdesk()">
+<option selected class="SELECT" value="">SELECT</option>
+<option class="10" value="10:General Support">General Support</option>
+<option class="70" value="70:B2B NOC">B2B NOC</option>
+<option class="71" value="71:B2B AMG">B2B AMG</option>
+<option class="31" value="31:FTTx General Support">FTTx General Support</option>
+<option class="72" value="72:B2B Phone">B2B Phone</option>
+<option class="11" value="11:NOC Level 1">NOC Level 1</option>
+<option class="81" value="81:District 1 - Champaign, IL">District 1 - Champaign, IL</option>
+<option class="32" value="32:FTTx NOC">FTTx NOC</option>
+<option class="69" value="69:B2B Helpdesk">B2B Helpdesk</option>
+<option class="20" value="20:NOC Level 2">NOC Level 2</option>
+<option class="90" value="90:eCommerce">eCommerce</option>
+<option class="12" value="12:NOC Engineering">NOC Engineering</option>
+<option class="13" value="13:Account Management Group">Account Management Group</option>
+<option class="18" value="18:Project Management">Project Management</option>
+<option class="30" value="30:FTTx AMG">FTTx AMG</option>
+<option class="29" value="29:Training Requests & Technical Documentation">Training Requests & Technical Documentation</option>
+<option class="14" value="14:MIS">MIS</option>
+<option class="76" value="76:Marketing">Marketing</option>
+<option class="78" value="78:ERP">ERP</option>
+<option class="79" value="79:Monitoring">Monitoring</option>
+<option class="83" value="83:Sec Ops">Sec Ops</option>
+<option class="84" value="84:R&D Helpdesk">R&D Helpdesk</option>
+<option class="68" value="68:Backbone - External">Backbone - External</option>
+<option class="85" value="85:Backbone - Internal">Backbone - Internal</option>
+<option class="86" value="86:Facility Maintenance">Facility Maintenance</option>
+<option class="88" value="88:Lab Requests">Lab Requests</option>
+<option class="87" value="87:Web Requests">Web Requests</option>
+<option class="91" value="91:Product Requests">Product Requests</option>
+<option class="92" value="92:GIS Helpdesk">GIS Helpdesk</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Scope:</td>
+					<td>
+						<!-- Current data from Odoo -->
+						<select id="scope" class="button button1" autocomplete="off" oninput="Javascript:ticketTypeGen()">
+<option selected class="SELECT" value="SELECT">SELECT</option>
+<option class="136" value="136:Communications Network Management">Communications Network Management</option>
+<option class="133" value="133:eCommerce">eCommerce</option>
+<option class="9" value="9:Individual">Individual</option>
+<option class="124" value="124:General Question">General Question</option>
+<option class="10" value="10:Localized">Localized</option>
+<option class="125" value="125:Marketing/Branding">Marketing/Branding</option>
+<option class="11" value="11:Building">Building</option>
+<option class="123" value="123:Website Feature Request">Website Feature Request</option>
+<option class="12" value="12:Site">Site</option>
+<option class="122" value="122:Website Issue">Website Issue</option>
+<option class="13" value="13:COLO">COLO</option>
+<option class="14" value="14:Office">Office</option>
+<option class="15" value="15:Lab">Lab</option>
+<option class="126" value="126:Network Issues">Network Issues</option>
+<option class="16" value="16:Informational">Informational</option>
+<option class="127" value="127:System Issues">System Issues</option>
+<option class="137" value="137:Data Services">Data Services</option>
+<option class="128" value="128:Firewall Issues">Firewall Issues</option>
+<option class="17" value="17:Doc Request">Doc Request</option>
+<option class="138" value="138:FTTX Support">FTTX Support</option>
+<option class="139" value="139:GIS Portal Feature Request">GIS Portal Feature Request</option>
+<option class="129" value="129:Infrastructure Issues">Infrastructure Issues</option>
+<option class="18" value="18:Doc Revision">Doc Revision</option>
+<option class="140" value="140:GIS Portal Issue">GIS Portal Issue</option>
+<option class="141" value="141:GIS Portal Member">GIS Portal Member</option>
+<option class="116" value="116:Circuit ID Request">Circuit ID Request</option>
+<option class="142" value="142:GIS Question">GIS Question</option>
+<option class="113" value="113:Geolocation Changes">Geolocation Changes</option>
+<option class="143" value="143:Mapping">Mapping</option>
+<option class="112" value="112:Routing Change Request">Routing Change Request</option>
+<option class="144" value="144:Permitting">Permitting</option>
+<option class="117" value="117:Turnup Resource">Turnup Resource</option>
+<option class="145" value="145:Reporting">Reporting</option>
+<option class="130" value="130:Other Requests">Other Requests</option>
+<option class="19" value="19:Doc Review">Doc Review</option>
+<option class="146" value="146:Marketing Project Assistance">Marketing Project Assistance</option>
+<option class="147" value="147:Request Copies of Marketing Materials">Request Copies of Marketing Materials</option>
+<option class="121" value="121:Other - Facility">Other - Facility</option>
+<option class="120" value="120:Maintenance Request">Maintenance Request</option>
+<option class="119" value="119:Maintenance Issue">Maintenance Issue</option>
+<option class="111" value="111:IP Allocation/Reclamation">IP Allocation/Reclamation</option>
+<option class="118" value="118:Other">Other</option>
+<option class="115" value="115:Business ONT Provisioning">Business ONT Provisioning</option>
+<option class="114" value="114:Public DNS Update">Public DNS Update</option>
+<option class="131" value="131:Training Request">Training Request</option>
+<option class="20" value="20:Other">Other</option>
+<option class="132" value="132:Training Review">Training Review</option>
+<option class="21" value="21:Training Revision">Training Revision</option>
+<option class="22" value="22:Doc Request - Ext. Dept">Doc Request - Ext. Dept</option>
+<option class="134" value="134:New">New</option>
+<option class="135" value="135:Modify">Modify</option>
+<option class="23" value="23:Sharepoint">Sharepoint</option>
+<option class="24" value="24:Knowledge Base">Knowledge Base</option>
+<option class="51" value="51:Alert">Alert</option>
+<option class="52" value="52:Workstation">Workstation</option>
+<option class="53" value="53:Server">Server</option>
+<option class="54" value="54:Network">Network</option>
+<option class="55" value="55:Cloud Service">Cloud Service</option>
+<option class="56" value="56:Application">Application</option>
+<option class="61" value="61:Individual (FTTx)">Individual (FTTx)</option>
+<option class="63" value="63:VPN">VPN</option>
+<option class="66" value="66:Marketing Question">Marketing Question</option>
+<option class="67" value="67:User Accounts">User Accounts</option>
+<option class="68" value="68:Reporting">Reporting</option>
+<option class="69" value="69:Odoo Issue">Odoo Issue</option>
+<option class="70" value="70:Odoo Feature Request">Odoo Feature Request</option>
+<option class="97" value="97:Pebbles Software Support">Pebbles Software Support</option>
+<option class="71" value="71:Other">Other</option>
+<option class="72" value="72:Circuit">Circuit</option>
+<option class="100" value="100:Cable Infrastructure">Cable Infrastructure</option>
+<option class="102" value="102:Office (B2B)">Office (B2B)</option>
+<option class="73" value="73:Metro">Metro</option>
+<option class="74" value="74:COLO">COLO</option>
+<option class="103" value="103:Application">Application</option>
+<option class="104" value="104:Workstation">Workstation</option>
+<option class="75" value="75:Informational">Informational</option>
+<option class="76" value="76:Odoo Question">Odoo Question</option>
+<option class="105" value="105:Server">Server</option>
+<option class="77" value="77:Monitoring Reports">Monitoring Reports</option>
+<option class="110" value="110:Phone">Phone</option>
+<option class="106" value="106:Email">Email</option>
+<option class="78" value="78:Node Management">Node Management</option>
+<option class="107" value="107:Application">Application</option>
+<option class="79" value="79:Testing">Testing</option>
+<option class="108" value="108:Network">Network</option>
+<option class="80" value="80:Service Issue">Service Issue</option>
+<option class="109" value="109:Administrative">Administrative</option>
+<option class="81" value="81:Network Change Request">Network Change Request</option>
+<option class="82" value="82:Intermittent Network">Intermittent Network</option>
+<option class="83" value="83:Network Infrastructure Problem">Network Infrastructure Problem</option>
+<option class="84" value="84:Service Request">Service Request</option>
+<option class="85" value="85:Service Restoration">Service Restoration</option>
+<option class="86" value="86:Password Reset">Password Reset</option>
+<option class="87" value="87:User Onboarding Request">User Onboarding Request</option>
+<option class="88" value="88:User Offboarding Request">User Offboarding Request</option>
+<option class="89" value="89:Phone">Phone</option>
+<option class="90" value="90:Key Fob\ID Badge">Key Fob\ID Badge</option>
+<option class="91" value="91:Laptop\Computer">Laptop\Computer</option>
+<option class="92" value="92:Printer\Copier">Printer\Copier</option>
+<option class="93" value="93:Virus\Malware">Virus\Malware</option>
+<option class="94" value="94:Email">Email</option>
+<option class="95" value="95:Other">Other</option>
+<option class="96" value="96:FTTx Software Support">FTTx Software Support</option>
+						</select>
+
+					</td>
+				</tr>
+				<tr>
+					<td>Ticket Type:</td>
+					<td>
+						<select id="ticketType" class="button button1" autocomplete="off"></select>
+					</td>
+				</tr>
+				<tr>
+					<td>Question:</td>
+					<td>
+						<input type="text" class="button button1" id="quest">
+						<input type="button" class="button" id="add" value="Add" onclick="Javascript:addRow();Javascript:helpdeskGen();">
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div>
+			<pre style= "background-color: #000000;">
+				<code style=
+					"white-space: pre-wrap;
+					color: #ffffff;"
+				><br>	Helpdesk: </code>
+				<code style=
+					"white-space: pre-wrap;
+					color: #ffffff;" id="tableHeader"
+				></code><br>
+			</pre>
+		</div>
+		<div id="helpdeskData">
+			<table id="tableData" class="table table-bordered table-dark table-hover" border="1" cellpadding="2">
+				<tr>
+					<td>&nbsp;</td>
+					<td><b>Scope</b></td>
+					<td><b>Ticket Type</b></td>
+					<td><b>Question</b></td>
+				</tr>
+			</table>
+			&nbsp;
+		</div>
+		<br>
+		<div>
+			<pre style= "background-color: #000000;">
+				<code style=
+					"white-space: pre-wrap;
+					color: #ffffff;" 
+					id="helpdeskCode"
+				><br>	-- Helpdesk Code Preview --</code>
+			</pre>
+		</div>
+		<br>
+		
+		<div id="fileGen">
+			<input 
+				type="button" 
+				class="button"
+				id="create" 
+				value="Generate Helpdesk File" 
+				onclick="Javascript:get_helpdesk_name();Javascript:helpdeskGen();Javascript:fileGen();" 
+			>
+		</div>
+		<br>
+		<table id="newFileData" class="table table-bordered table-dark table-hover" border="1" cellpadding="2">
+			<tr>
+				<td><b>Generated Files:</b></td>
+			</tr>
+		</table>
+
+	</body>
+</html>
+
+
+<!--style="margin:0px; padding:10px"-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
